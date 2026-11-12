@@ -1,4 +1,20 @@
-node_modules/
+# Environment variables
 .env
 .env.*
+
+# Allow example environment file
 !.env.example
+
+# Dependencies
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Debug files
+npm-debug.log*
