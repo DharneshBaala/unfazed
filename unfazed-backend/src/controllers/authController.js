@@ -1,4 +1,3 @@
-
 import User from "../models/User.js";
 import Client from "../models/Client.js";
 import Therapist from "../models/Therapist.js";

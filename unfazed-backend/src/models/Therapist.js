@@ -27,6 +27,13 @@ const therapistSchema = new mongoose.Schema(
       min: 0,
     },
 
+    // Appointment duration configured by therapist
+    sessionDurationMinutes: {
+      type: Number,
+      enum: [30, 45, 60, 75, 90],
+      default: 60,
+    },
+
     bio: {
       type: String,
       trim: true,
@@ -57,7 +64,7 @@ const therapistSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 const Therapist = mongoose.model("Therapist", therapistSchema);

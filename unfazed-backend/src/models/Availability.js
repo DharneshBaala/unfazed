@@ -69,7 +69,7 @@ const availabilitySchema = new mongoose.Schema(
           if (new Set(days).size !== days.length) {
             return false;
           }
-
+          
           // Validate time slots for each day
           for (const daySchedule of schedule) {
             const slots = daySchedule.slots;

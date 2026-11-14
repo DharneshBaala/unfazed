@@ -1,0 +1,801 @@
+.schedule-page {
+  padding: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #302820;
+}
+
+.schedule-header {
+  margin-bottom: 32px;
+}
+
+.schedule-header h1 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.schedule-header p {
+  color: #82776c;
+  font-size: 15px;
+}
+
+/* Add Availability */
+
+.schedule-form {
+  background: #fff;
+  border: 1px solid #eee5db;
+  border-radius: 16px;
+  padding: 26px;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 16px rgba(60, 45, 30, 0.04);
+}
+
+.schedule-form h2 {
+  font-size: 20px;
+  margin-bottom: 22px;
+}
+
+.schedule-form-fields {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: end;
+}
+
+.schedule-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.schedule-field label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #514538;
+}
+
+.schedule-field select,
+.schedule-field input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #e5dbd0;
+  border-radius: 9px;
+  background: #fdfbf8;
+  color: #302820;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.schedule-field select:focus,
+.schedule-field input:focus {
+  border-color: #92745b;
+}
+
+.add-slot-btn {
+  padding: 13px 20px;
+  background: #493a2d;
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.add-slot-btn:hover {
+  background: #66513e;
+  transform: translateY(-1px);
+}
+
+/* Weekly Schedule */
+
+.weekly-schedule {
+  margin-top: 35px;
+}
+
+.weekly-schedule > h2 {
+  font-size: 21px;
+  margin-bottom: 20px;
+}
+
+.schedule-days {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.schedule-day-card {
+  background: #fff;
+  border: 1px solid #eee5db;
+  border-radius: 14px;
+  padding: 22px;
+  min-height: 130px;
+  box-shadow: 0 3px 12px rgba(60, 45, 30, 0.03);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.schedule-day-card:hover {
+  box-shadow: 0 7px 20px rgba(60, 45, 30, 0.07);
+  transform: translateY(-2px);
+}
+
+.schedule-day-card h3 {
+  font-size: 17px;
+  margin-bottom: 16px;
+}
+
+.schedule-slot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #f8f5f0;
+  border: 1px solid #eee7dd;
+  border-radius: 9px;
+  padding: 11px 13px;
+  margin-bottom: 10px;
+}
+
+.schedule-slot span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #514538;
+}
+
+.remove-slot-btn {
+  background: transparent;
+  border: 1px solid #e7d5d0;
+  color: #a34d42;
+  border-radius: 7px;
+  padding: 6px 11px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.remove-slot-btn:hover {
+  background: #f9eae7;
+}
+
+.unavailable-text {
+  color: #a59b90;
+  font-size: 14px;
+  background: #faf8f5;
+  padding: 11px 13px;
+  border-radius: 8px;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  .schedule-page {
+    padding: 20px;
+  }
+
+  .schedule-form-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .schedule-days {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .schedule-page {
+    padding: 14px;
+  }
+
+  .schedule-form {
+    padding: 18px;
+  }
+
+  .schedule-day-card {
+    padding: 17px;
+  }
+}
+
+.availability-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: #fff;
+  border: 1px solid #eee5db;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.availability-status h2 {
+  font-size: 19px;
+  margin-bottom: 7px;
+}
+
+.availability-status p {
+  color: #82776c;
+  font-size: 14px;
+}
+
+.availability-toggle {
+  padding: 11px 22px;
+  border: none;
+  border-radius: 9px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.availability-toggle.active {
+  background: #f7e9e4;
+  color: #9b5144;
+}
+
+.availability-toggle.inactive {
+  background: #e8f0e7;
+  color: #476c46;
+}
+
+.availability-toggle:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .availability-status {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+
+/* =====================================
+   APPOINTMENTS SECTION
+===================================== */
+
+.appointments-section {
+  margin-top: 32px;
+  padding: 28px;
+  background: #fffdf9;
+  border: 1px solid #e9dfd2;
+  border-radius: 14px;
+}
+
+.appointments-header {
+  margin-bottom: 24px;
+}
+
+.appointments-header h2 {
+  color: #49372c;
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.appointments-header p {
+  color: #8b796c;
+  font-size: 14px;
+}
+
+.appointments-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.appointment-card {
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #eadfd3;
+  border-radius: 12px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.appointment-card:hover {
+  box-shadow: 0 5px 18px rgba(73, 55, 44, 0.08);
+  transform: translateY(-2px);
+}
+
+.appointment-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0e9e1;
+}
+
+.appointment-card-header h3 {
+  color: #49372c;
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+
+.appointment-card-header p {
+  color: #8b796c;
+  font-size: 13px;
+  word-break: break-word;
+}
+
+.appointment-status {
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.appointment-status.scheduled {
+  background: #fdf0d8;
+  color: #94621f;
+}
+
+.appointment-status.completed {
+  background: #e4f2e6;
+  color: #397348;
+}
+
+.appointment-status.cancelled {
+  background: #f8e5e2;
+  color: #a34b42;
+}
+
+.appointment-details {
+  padding-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.appointment-details p {
+  color: #756357;
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.appointment-details strong {
+  color: #49372c;
+}
+
+.no-appointments,
+.appointments-error {
+  padding: 24px;
+  text-align: center;
+  border-radius: 10px;
+  background: #f8f3ed;
+  color: #8b796c;
+  font-size: 14px;
+}
+
+.appointments-error {
+  color: #a34b42;
+  background: #f8e5e2;
+}
+
+@media (max-width: 768px) {
+  .appointments-list {
+    grid-template-columns: 1fr;
+  }
+
+  .appointments-section {
+    padding: 20px;
+  }
+
+  .appointment-card-header {
+    flex-direction: column;
+  }
+}
+
+
+/* Appointments Header */
+.appointments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.create-appointment-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 18px;
+  border: none;
+  border-radius: 10px;
+  background: #755b48;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.create-appointment-btn:hover {
+  background: #5f4737;
+}
+
+/* Appointment Form */
+.appointment-form {
+  padding: 24px;
+  margin-bottom: 28px;
+  background: #fff;
+  border: 1px solid #e8dfd5;
+  border-radius: 14px;
+}
+
+.appointment-form h3 {
+  margin: 0 0 22px;
+  color: #33291f;
+  font-size: 19px;
+}
+
+.appointment-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+  flex: 1;
+}
+
+.appointment-form-group label {
+  color: #514438;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.appointment-form-group input,
+.appointment-form-group select,
+.appointment-form-group textarea {
+  width: 100%;
+  padding: 12px 13px;
+  border: 1px solid #ded4ca;
+  border-radius: 9px;
+  background: #fff;
+  color: #33291f;
+  font: inherit;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.appointment-form-group input:focus,
+.appointment-form-group select:focus,
+.appointment-form-group textarea:focus {
+  border-color: #96745b;
+  box-shadow: 0 0 0 3px rgba(150, 116, 91, 0.12);
+}
+
+.appointment-form-group textarea {
+  resize: vertical;
+}
+
+.appointment-form-row {
+  display: flex;
+  gap: 18px;
+}
+
+.appointment-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.appointment-form-actions button {
+  padding: 11px 18px;
+  border: none;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.appointment-form-actions button:first-child {
+  background: #f0ebe5;
+  color: #514438;
+}
+
+.appointment-form-actions button:last-child {
+  background: #755b48;
+  color: #fff;
+}
+
+.appointment-form-actions button:last-child:hover {
+  background: #5f4737;
+}
+
+.appointment-form-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .appointments-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .appointment-form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .appointment-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .appointment-form-actions button {
+    width: 100%;
+  }
+}
+
+.reschedule-appointment-btn {
+  padding: 9px 16px;
+  background: #f3eee7;
+  color: #765c46;
+  border: 1px solid #dfd2c3;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reschedule-appointment-btn:hover {
+  background: #e9dfd3;
+}
+
+.reschedule-form {
+  margin-top: 18px;
+  padding: 20px;
+  background: #faf7f2;
+  border: 1px solid #e8ded2;
+  border-radius: 12px;
+}
+
+.reschedule-form h3 {
+  margin: 0 0 16px;
+  color: #493b30;
+  font-size: 16px;
+}
+
+.reschedule-form label {
+  display: block;
+  margin-bottom: 6px;
+  color: #665447;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.reschedule-form input,
+.reschedule-form select,
+.reschedule-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  border: 1px solid #ded3c8;
+  border-radius: 8px;
+  background: #fff;
+  color: #493b30;
+  font-family: inherit;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.reschedule-form input:focus,
+.reschedule-form select:focus,
+.reschedule-form textarea:focus {
+  outline: none;
+  border-color: #a8896c;
+  box-shadow: 0 0 0 3px rgba(168, 137, 108, 0.12);
+}
+
+.reschedule-form textarea {
+  min-height: 85px;
+  resize: vertical;
+}
+
+.reschedule-form button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #765c46;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.reschedule-form button:hover {
+  background: #604832;
+}
+
+.reschedule-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* Cancel Appointment Button */
+.cancel-appointment-btn {
+  padding: 9px 16px;
+  background: #fff1ef;
+  color: #a34b42;
+  border: 1px solid #e8c5bf;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancel-appointment-btn:hover {
+  background: #a34b42;
+  color: #ffffff;
+  border-color: #a34b42;
+}
+
+.cancel-appointment-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Reschedule Appointment Button */
+.reschedule-appointment-btn {
+  padding: 9px 16px;
+  background: #f3eee7;
+  color: #765c46;
+  border: 1px solid #dfd2c3;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reschedule-appointment-btn:hover {
+  background: #e9dfd3;
+  color: #49372c;
+}
+
+/* Reschedule Form */
+.reschedule-form {
+  margin-top: 18px;
+  padding: 20px;
+  background: #faf7f2;
+  border: 1px solid #e8ded2;
+  border-radius: 12px;
+}
+
+.reschedule-form h3 {
+  margin: 0 0 16px;
+  color: #493b30;
+  font-size: 16px;
+}
+
+.reschedule-form label {
+  display: block;
+  margin-bottom: 6px;
+  color: #665447;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.reschedule-form input,
+.reschedule-form select,
+.reschedule-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  border: 1px solid #ded3c8;
+  border-radius: 8px;
+  background: #fff;
+  color: #493b30;
+  font-family: inherit;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.reschedule-form input:focus,
+.reschedule-form select:focus,
+.reschedule-form textarea:focus {
+  outline: none;
+  border-color: #a8896c;
+  box-shadow: 0 0 0 3px rgba(168, 137, 108, 0.12);
+}
+
+.reschedule-form textarea {
+  min-height: 85px;
+  resize: vertical;
+}
+
+.reschedule-form button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #765c46;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.reschedule-form button:hover {
+  background: #604832;
+  color: #fff;
+}
+
+.reschedule-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.appointment-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.cancel-appointment-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .appointment-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .appointment-actions button {
+    width: 100%;
+  }
+}
+
+
+/* Appointment Filters */
+.appointment-filters {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.appointment-filter-btn {
+  padding: 9px 18px;
+  border: 1px solid #e5d9cc;
+  border-radius: 8px;
+  background: #fff;
+  color: #765c46;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.appointment-filter-btn:hover {
+  background: #f3eee7;
+  color: #49372c;
+}
+
+.appointment-filter-btn.active {
+  background: #755b48;
+  border-color: #755b48;
+  color: #fff;
+}
+
+@media (max-width: 480px) {
+  .appointment-filters {
+    gap: 8px;
+  }
+
+  .appointment-filter-btn {
+    flex: 1;
+    padding: 9px 12px;
+  }
+}

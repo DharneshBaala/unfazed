@@ -9,12 +9,6 @@ const clientSchema = new mongoose.Schema(
       unique: true,
     },
 
-    assignedTherapist: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Therapist",
-      default: null,
-    },
-
     phone: {
       type: String,
       trim: true,

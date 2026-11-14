@@ -1,0 +1,296 @@
+.therapist-profile {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 5px 40px;
+  color: #30271f;
+}
+
+/* Header */
+
+.profile-header {
+  margin-bottom: 30px;
+}
+
+.profile-header span {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  color: #a58b70;
+  margin-bottom: 8px;
+}
+
+.profile-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #29231e;
+  margin: 0 0 9px;
+}
+
+.profile-header p {
+  color: #918a82;
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Account Card */
+
+.profile-account-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(135deg, #ffffff, #faf8f4);
+  padding: 28px;
+  border: 1px solid #eae5dd;
+  border-radius: 16px;
+  margin-bottom: 26px;
+  box-shadow: 0 4px 18px rgba(48, 39, 31, 0.035);
+}
+
+.profile-avatar {
+  width: 68px;
+  height: 68px;
+  border-radius: 18px;
+  background: #eee6dc;
+  color: #554332;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.profile-account-info h2 {
+  font-size: 19px;
+  font-weight: 700;
+  color: #30271f;
+  margin: 0 0 6px;
+}
+
+.profile-account-info p {
+  font-size: 13px;
+  color: #938b83;
+  margin: 0 0 12px;
+}
+
+.profile-account-info span {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: #f3eee6;
+  color: #826b50;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+/* Messages */
+
+.profile-message {
+  padding: 14px 17px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.profile-message.error {
+  background: #fff1ee;
+  border: 1px solid #f5d4cd;
+  color: #b54738;
+}
+
+.profile-message.success {
+  background: #eef7ef;
+  border: 1px solid #d4e9d7;
+  color: #327548;
+}
+
+/* Form */
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.profile-section {
+  background: #fff;
+  border: 1px solid #eae6df;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 18px rgba(48, 39, 31, 0.025);
+}
+
+.profile-section h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #30271f;
+  margin: 0 0 8px;
+}
+
+.profile-section > p {
+  font-size: 13px;
+  color: #98918a;
+  margin: 0 0 28px;
+  line-height: 1.6;
+}
+
+/* Fields */
+
+.profile-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.profile-field:last-child {
+  margin-bottom: 0;
+}
+
+.profile-field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #51473e;
+}
+
+.profile-field input,
+.profile-field textarea,
+.profile-field select {
+  width: 100%;
+  padding: 14px 15px;
+  border: 1px solid #e3ded6;
+  border-radius: 9px;
+  background: #fdfcfb;
+  color: #30271f;
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.profile-field input::placeholder,
+.profile-field textarea::placeholder {
+  color: #b4ada5;
+}
+
+.profile-field input:focus,
+.profile-field textarea:focus,
+.profile-field select:focus {
+  border-color: #a58b70;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(165, 139, 112, 0.10);
+}
+
+.profile-field textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.7;
+}
+
+.profile-field select {
+  cursor: pointer;
+}
+
+.profile-field small {
+  font-size: 11px;
+  color: #a49b91;
+  text-align: right;
+}
+
+/* Availability Checkbox */
+
+.profile-field label:has(input[type="checkbox"]) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.profile-field input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  accent-color: #826b50;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Save Button */
+
+.profile-save-button {
+  align-self: flex-start;
+  padding: 14px 27px;
+  background: #30271f;
+  color: #fff;
+  border: 1px solid #30271f;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.profile-save-button:hover {
+  background: #554332;
+  border-color: #554332;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 14px rgba(48, 39, 31, 0.13);
+}
+
+.profile-save-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .therapist-profile {
+    padding: 5px 0 30px;
+  }
+
+  .profile-header h1 {
+    font-size: 27px;
+  }
+
+  .profile-section {
+    padding: 23px;
+  }
+
+  .profile-account-card {
+    padding: 21px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-account-card {
+    align-items: flex-start;
+    gap: 14px;
+    padding: 17px;
+  }
+
+  .profile-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 13px;
+    font-size: 21px;
+  }
+
+  .profile-account-info h2 {
+    font-size: 16px;
+  }
+
+  .profile-section {
+    padding: 19px;
+  }
+
+  .profile-save-button {
+    width: 100%;
+  }
+}
